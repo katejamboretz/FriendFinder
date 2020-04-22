@@ -4,37 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Survey Questions</title>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
     />
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
   <body>
     <h1>Survey Questions</h1>
     <hr class="my-4" />
     <h2>About You</h2>
 
-    <label for="#">Name (Required)</label>
+    <label for="name">Name (Required)</label>
     <div class="input-group mb-3">
       <input
-        id="#"
+        id="name"
         type="text"
         class="form-control"
         placeholder="Username"
@@ -42,10 +31,10 @@
         aria-describedby="basic-addon1"
       />
     </div>
-    <label for="#">Link to Photo Image (Required)</label>
+    <label for="photo">Link to Photo Image (Required)</label>
     <div class="input-group mb-3">
       <input
-        id="#"
+        id="photo"
         type="text"
         class="form-control"
         placeholder="Username"
@@ -55,10 +44,10 @@
     </div>
     <h3>Question 1</h3>
     <div class="form-group">
-      <label for="exampleFormControlSelect1"
+      <label for="question1"
         >Your mind is always buzzing with unexplored ideas and plans.</label
       >
-      <select class="form-control" id="exampleFormControlSelect1">
+      <select class="form-control" id="Question1">
         <option>1 (Strongly Disagree)</option>
         <option>2</option>
         <option>3</option>
@@ -69,11 +58,11 @@
     <h3>Question 2</h3>
 
     <div class="form-group">
-      <label for="exampleFormControlSelect1"
+      <label for="Question2"
         >Generally speaking, you rely more on your experience than your
         imagination</label
       >
-      <select class="form-control" id="exampleFormControlSelect1">
+      <select class="form-control" id="Question2">
         <option>1 (Strongly Disagree)</option>
         <option>2</option>
         <option>3</option>
@@ -84,11 +73,11 @@
     <h3>Question 3</h3>
 
     <div class="form-group">
-      <label for="exampleFormControlSelect1"
+      <label for="Question3"
         >You find it easy to stay relaxed and focused even when there is some
         pressure</label
       >
-      <select class="form-control" id="exampleFormControlSelect1">
+      <select class="form-control" id="Question3">
         <option>1 (Strongly Disagree)</option>
         <option>2</option>
         <option>3</option>
@@ -99,10 +88,10 @@
     <h3>Question 4</h3>
 
     <div class="form-group">
-      <label for="exampleFormControlSelect1"
+      <label for="Question4"
         >You rarely do something just out of sheer curiosity.</label
       >
-      <select class="form-control" id="exampleFormControlSelect1">
+      <select class="form-control" id="Question4">
         <option>1 (Strongly Disagree)</option>
         <option>2</option>
         <option>3</option>
@@ -113,10 +102,8 @@
     <h3>Question 5</h3>
 
     <div class="form-group">
-      <label for="exampleFormControlSelect1"
-        >People can rarely upset you.</label
-      >
-      <select class="form-control" id="exampleFormControlSelect1">
+      <label for="Question5">People can rarely upset you.</label>
+      <select class="form-control" id="Question5">
         <option>1 (Strongly Disagree)</option>
         <option>2</option>
         <option>3</option>
@@ -127,11 +114,11 @@
     <h3>Question 6</h3>
 
     <div class="form-group">
-      <label for="exampleFormControlSelect1"
+      <label for="Question6"
         >It is often difficult for you to relate to other people's
         feelings.</label
       >
-      <select class="form-control" id="exampleFormControlSelect1">
+      <select class="form-control" id="Question6">
         <option>1 (Strongly Disagree)</option>
         <option>2</option>
         <option>3</option>
@@ -142,11 +129,11 @@
     <h3>Question 7</h3>
 
     <div class="form-group">
-      <label for="exampleFormControlSelect1"
+      <label for="Question7"
         >In a discussion, truth should be more important than people's
         sensitivities.</label
       >
-      <select class="form-control" id="exampleFormControlSelect1">
+      <select class="form-control" id="Question7">
         <option>1 (Strongly Disagree)</option>
         <option>2</option>
         <option>3</option>
@@ -157,10 +144,10 @@
     <h3>Question 8</h3>
 
     <div class="form-group">
-      <label for="exampleFormControlSelect1"
+      <label for="Question8"
         >You rarely get carried away by fantasies and ideas.</label
       >
-      <select class="form-control" id="exampleFormControlSelect1">
+      <select class="form-control" id="Question8">
         <option>1 (Strongly Disagree)</option>
         <option>2</option>
         <option>3</option>
@@ -171,11 +158,11 @@
     <h3>Question 9</h3>
 
     <div class="form-group">
-      <label for="exampleFormControlSelect1"
+      <label for="Question9"
         >You think that everyone's views should be respected regardless of
         whether they are supported by facts or not.</label
       >
-      <select class="form-control" id="exampleFormControlSelect1">
+      <select class="form-control" id="Question9">
         <option>1 (Strongly Disagree)</option>
         <option>2</option>
         <option>3</option>
@@ -186,11 +173,11 @@
     <h3>Question 10</h3>
 
     <div class="form-group">
-      <label for="exampleFormControlSelect1"
+      <label for="Question10"
         >You feel more energetic after spending time with a group of
         people.</label
       >
-      <select class="form-control" id="exampleFormControlSelect1">
+      <select class="form-control" id="Question10">
         <option>1 (Strongly Disagree)</option>
         <option>2</option>
         <option>3</option>
@@ -198,10 +185,49 @@
         <option>5 (Strongly Agree)</option>
       </select>
     </div>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Submit</a>
+    <a class="btn btn-primary btn-lg" id="submit" href="#" role="button"
+      >Submit</a
+    >
     <a class="m-3" href="/api/friends">API Friends List</a><span>|</span
     ><a class="m-3" href="https://github.com/katejamboretz/FriendFinder"
       >GitHub Repo</a
     >
   </body>
 </html>
+
+<script type="text/javascript">
+  // add api calls for submission form
+
+  $("#submit").on("click", function (event) {
+    event.preventDefault();
+
+    var newFriend = {
+      name: $("#name").val().trim(),
+      photo: $("#photo").val().trim(),
+      scores: [
+        $("#Question1").val(),
+        $("#Question2").val(),
+        $("#Question3").val(),
+        $("#Question4").val(),
+        $("#Question5").val(),
+        $("#Question6").val(),
+        $("#Question7").val(),
+        $("#Question8").val(),
+        $("#Question9").val(),
+        $("#Question10").val(),
+      ],
+    };
+
+    $.post("/api/friends", newFriend, function (data) {
+      if (data) {
+        // add logic to match with friend and display in alert
+        alert("Here is who you matched with!");
+      } else {
+        alert("We were unable to match you.");
+      }
+
+      $("#name").val("");
+      $("#photo").val("");
+    });
+  });
+</script>

@@ -12,5 +12,6 @@ module.exports = function (app) {
   //POST route to /api/friends to handle incoming survey
   app.post("/api/friends", function (req, res) {
     friendData.push(req.body);
+    res.json(true);
   });
 };
