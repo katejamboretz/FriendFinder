@@ -15,7 +15,7 @@
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   </head>
-  <body>
+  <body class="m-2">
     <h1>Survey Questions</h1>
     <hr class="my-4" />
     <h2>About You</h2>
@@ -26,8 +26,8 @@
         id="name"
         type="text"
         class="form-control"
-        placeholder="Username"
-        aria-label="Username"
+        placeholder="Macy Reed"
+        aria-label="Macy Reed"
         aria-describedby="basic-addon1"
       />
     </div>
@@ -37,8 +37,8 @@
         id="photo"
         type="text"
         class="form-control"
-        placeholder="Username"
-        aria-label="Username"
+        placeholder="https://profile.jpg"
+        aria-label="https://profile.jpg"
         aria-describedby="basic-addon1"
       />
     </div>
@@ -60,7 +60,7 @@
     <div class="form-group">
       <label for="Question2"
         >Generally speaking, you rely more on your experience than your
-        imagination</label
+        imagination.</label
       >
       <select class="form-control" id="Question2">
         <option value="1">1 (Strongly Disagree)</option>
@@ -75,7 +75,7 @@
     <div class="form-group">
       <label for="Question3"
         >You find it easy to stay relaxed and focused even when there is some
-        pressure</label
+        pressure.</label
       >
       <select class="form-control" id="Question3">
         <option value="1">1 (Strongly Disagree)</option>
@@ -174,8 +174,8 @@
 
     <div class="form-group">
       <label for="Question10"
-        >You feel more energetic after spending time with a group of people. [1
-        (Strongly Disagree) to 5 (Strongly Agree)]</label
+        >You feel more energetic after spending time with a group of
+        people.</label
       >
       <select class="form-control" id="Question10">
         <option value="1">1 (Strongly Disagree)</option>
@@ -185,9 +185,55 @@
         <option value="5">5 (Strongly Agree)</option>
       </select>
     </div>
-    <a class="btn btn-primary btn-lg" id="submit" href="#" role="button"
-      >Submit</a
+    <br />
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-toggle="modal"
+      data-target="#exampleModal"
+      id="submit"
     >
+      Submit
+    </button>
+    <br />
+    <br />
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Your Match!</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+              id="clear"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="dialog"></div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              id="clear"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <a class="m-3" href="/api/friends">API Friends List</a><span>|</span
     ><a class="m-3" href="https://github.com/katejamboretz/FriendFinder"
       >GitHub Repo</a
@@ -206,9 +252,9 @@
       numString = $(tag).val();
       numInt = parseInt(numString, 10); // not converting to Integer??
       numArray.push(numInt);
-      console.log(
-        "Tag: " + tag + " numInt: " + numInt + " numString: " + numString
-      );
+      // console.log(
+      //   "Tag: " + tag + " numInt: " + numInt + " numString: " + numString
+      // );
     }
 
     var newFriend = {
@@ -232,10 +278,12 @@
         friendData
       ) {
         difArray = [];
-        for (var j = 0; j < friendData.length; j++) {
+        for (var j = 0; j < friendData.length - 1; j++) {
           totalDif = 0;
           for (var i = 0; i < 10; i++) {
-            var dif = friendData[j].scores[i] - friend.scores[i];
+            var dif = Math.abs(
+              parseInt(friendData[j].scores[i]) - parseInt(friend.scores[i])
+            );
             totalDif += dif;
           }
           difArray.push(totalDif);
@@ -244,17 +292,36 @@
         var index = 0;
         var value = difArray[0];
         for (var m = 1; m < difArray.length; m++) {
-          if (difArray[i] < value) {
-            value = difArray[i];
-            index = i;
+          if (difArray[m] < value) {
+            value = difArray[m];
+            index = m;
           }
         }
 
         var match = friendData[index];
-        console.log("match: " + match);
-        console.log("match.name: " + match.name);
+        // console.log("value: " + value);
+        // console.log("difArray: " + difArray);
+        // console.log("match: " + match);
+        // console.log("match.name: " + match.name);
 
-        alert("You matched with " + match.name + " " + match.photo);
+        $("#dialog")
+          .append("<br>")
+          .append("<h2>You matched with " + match.name + "!</h2>")
+          .append(
+            "<img src=" +
+              match.photo +
+              " class='img-fluid' alt='Responsive image'/><br/>"
+          )
+          .append("<br>")
+          .append($(this).html());
+        $("#clear").on("click", function () {
+          $("#dialog").empty();
+        });
+
+        // reference: https://coderwall.com/p/yo1i4q/clear-bootstrap-modal-content-after-close
+        $("body").on("hidden.bs.modal", ".modal", function () {
+          $("#dialog").empty();
+        });
       });
     }
   });
