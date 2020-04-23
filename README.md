@@ -20,7 +20,7 @@ This website is similar to a dating or matching app. From the home page and defa
 ## Authors
 
 - **Kate Jamboretz** - _Initial work_ - [katejamboretz](https://github.com/katejamboretz)
-- **UCB Extension Full Stack Program** - _provide assignment objective, overall purpose of app, match questions and repository/file layout_
+- **UCB Extension Full Stack Program** - _provide assignment objective, overall purpose of app and visual design ideas, match questions and repository/file layout_
 
 ## Acknowledgments
 
